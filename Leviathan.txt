@@ -1,0 +1,27 @@
+Leviathan
+
+Level0:
+
+ls -a
+cd .backup
+ls
+Gasim un html
+cat bookmarks.html
+Se afiseaza foarte multa informatie, ideea este sa gasim detalii legate de leviathan1
+cat bookmarks.html | egrep "leviathan1, de unde extragem parola.
+
+R:vPPIfmI1qsA
+
+Level1:
+ls
+./check
+Parola introdusa este gresita.
+ltrace ./check de unde aflam parola "sex"
+introducem parola si porneste un terminal, dar nu stim ca ce user suntem logati.
+whoami => leviathan2
+aflam parola leviathan2 cu cat /etc/leviathan_pass/leviathan2
+
+R:mEh5PNl10e
+
+Level2:
+
