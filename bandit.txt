@@ -1,0 +1,584 @@
+ssh banditN@bandit.labs.overthewire.org -p 2220,unde n este numarul levelui
+
+*****BANDIT
+
+1. cat readme
+R:NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+2. cat ./-
+R:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+3. cat "spaces in this filename"
+R:aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+4. cd inhere
+   ls -lah(gasesc fisierele human-readable + pe cele ascunse)
+   cat .hidden
+R:2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+5. cat pe fiecare dintre fisiere pentru a vedea care este human-readable
+R:lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+6. find . -size 1033c -type f ! -executable -exec cat {} \;
+R:P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+7. find / -user bandit7 -group bandit6 -size 33c ( se verifica fisierul pentru care nu primim eroare)
+cat /var/lib/dpkg/info/bandit7.password
+R:z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+8. cat data.txt | egrep "millionth" | cut -f2
+R:TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+
+9. sort data.txt | uniq -u
+R:EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+10. cat data.txt | strings | ergep "="
+R:G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+
+11. cat data.txt | base64 -d
+R:6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+12. cat data.txt | tr "a-zA-Z" "n-za-mN-ZA-M"
+R:JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+13.     cd /tmp
+        mkdir alex
+	cd alex
+	mkdir ow11
+	mv data ow11.gz
+	mv ow11 data.gz
+	gzip -d data.gz
+	mv data data2.bz
+	mv data2 data3.gz
+	bzip2 -d data2.bz
+	mv data2 data3.gz
+	gzip -d data3.gz
+	mv data3 data4.tar
+	tar -xf data4.tar
+	mv data4.bin data5.tar
+	mv data5.bin data6.tar
+	tar -xf data6.tar
+	mv data6.bin data7.bz
+	bzip2 -d data7.bz
+	mv data7 data8.tar
+	mv data8.bin data9.gz
+	gzip -d data9.gz
+	cat data9
+R:wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+14.
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAxkkOE83W2cOT7IWhFc9aPaaQmQDdgzuXCv+ppZHa++buSkN+
+gg0tcr7Fw8NLGa5+Uzec2rEg0WmeevB13AIoYp0MZyETq46t+jk9puNwZwIt9XgB
+ZufGtZEwWbFWw/vVLNwOXBe4UWStGRWzgPpEeSv5Tb1VjLZIBdGphTIK22Amz6Zb
+ThMsiMnyJafEwJ/T8PQO3myS91vUHEuoOMAzoUID4kN0MEZ3+XahyK0HJVq68KsV
+ObefXG1vvA3GAJ29kxJaqvRfgYnqZryWN7w3CHjNU4c/2Jkp+n8L0SnxaNA+WYA7
+jiPyTF0is8uzMlYQ4l1Lzh/8/MpvhCQF8r22dwIDAQABAoIBAQC6dWBjhyEOzjeA
+J3j/RWmap9M5zfJ/wb2bfidNpwbB8rsJ4sZIDZQ7XuIh4LfygoAQSS+bBw3RXvzE
+pvJt3SmU8hIDuLsCjL1VnBY5pY7Bju8g8aR/3FyjyNAqx/TLfzlLYfOu7i9Jet67
+xAh0tONG/u8FB5I3LAI2Vp6OviwvdWeC4nOxCthldpuPKNLA8rmMMVRTKQ+7T2VS
+nXmwYckKUcUgzoVSpiNZaS0zUDypdpy2+tRH3MQa5kqN1YKjvF8RC47woOYCktsD
+o3FFpGNFec9Taa3Msy+DfQQhHKZFKIL3bJDONtmrVvtYK40/yeU4aZ/HA2DQzwhe
+ol1AfiEhAoGBAOnVjosBkm7sblK+n4IEwPxs8sOmhPnTDUy5WGrpSCrXOmsVIBUf
+laL3ZGLx3xCIwtCnEucB9DvN2HZkupc/h6hTKUYLqXuyLD8njTrbRhLgbC9QrKrS
+M1F2fSTxVqPtZDlDMwjNR04xHA/fKh8bXXyTMqOHNJTHHNhbh3McdURjAoGBANkU
+1hqfnw7+aXncJ9bjysr1ZWbqOE5Nd8AFgfwaKuGTTVX2NsUQnCMWdOp+wFak40JH
+PKWkJNdBG+ex0H9JNQsTK3X5PBMAS8AfX0GrKeuwKWA6erytVTqjOfLYcdp5+z9s
+8DtVCxDuVsM+i4X8UqIGOlvGbtKEVokHPFXP1q/dAoGAcHg5YX7WEehCgCYTzpO+
+xysX8ScM2qS6xuZ3MqUWAxUWkh7NGZvhe0sGy9iOdANzwKw7mUUFViaCMR/t54W1
+GC83sOs3D7n5Mj8x3NdO8xFit7dT9a245TvaoYQ7KgmqpSg/ScKCw4c3eiLava+J
+3btnJeSIU+8ZXq9XjPRpKwUCgYA7z6LiOQKxNeXH3qHXcnHok855maUj5fJNpPbY
+iDkyZ8ySF8GlcFsky8Yw6fWCqfG3zDrohJ5l9JmEsBh7SadkwsZhvecQcS9t4vby
+9/8X4jS0P8ibfcKS4nBP+dT81kkkg5Z5MohXBORA7VWx+ACohcDEkprsQ+w32xeD
+qT1EvQKBgQDKm8ws2ByvSUVs9GjTilCajFqLJ0eVYzRPaY6f++Gv/UVfAPV4c+S0
+kAWpXbv5tbkkzbS0eaLPTKgLzavXtQoTtKwrjpolHKIHUz6Wu+n4abfAIRFubOdN
+/+aLoRQ0yBDRbdXMsZN/jvY44eM+xRLdRVyMmdPtP8belRi2E2aEzA==
+-----END RSA PRIVATE KEY-----
+
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+
+R:fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+15.cat /etc/bandit_pass/bandit14 | nc localhost  30000
+
+R:jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+16.echo "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" | openssl s_client -connect localhost:30001 -ign_eof
+
+R:JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+17.nmap --script ssl-enum-ciphers -p 31000-32000 localhost
+
+Output:
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-06-20 09:34 UTC
+
+Nmap scan report for localhost (127.0.0.1)
+
+Host is up (0.000095s latency).
+
+Not shown: 996 closed ports
+
+PORT      STATE SERVICE
+
+31046/tcp open  unknown
+
+31518/tcp open  unknown
+
+| ssl-enum-ciphers: 
+
+|   TLSv1.2: 
+
+|     ciphers: 
+
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CAMELLIA_128_CBC_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CAMELLIA_256_CBC_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (secp256r1) - A
+
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CCM (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CCM_8 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CCM (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CCM_8 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A
+
+|       TLS_RSA_WITH_ARIA_128_GCM_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_ARIA_256_GCM_SHA384 (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_128_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_256_CBC_SHA256 (rsa 2048) - A
+
+|     compressors: 
+
+|       NULL
+
+|     cipher preference: client
+
+|     warnings: 
+
+|       Weak certificate signature: SHA1
+
+|_  least strength: A
+
+31691/tcp open  unknown
+
+31790/tcp open  unknown
+
+| ssl-enum-ciphers: 
+
+|   TLSv1.2: 
+
+|     ciphers: 
+
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CAMELLIA_128_CBC_SHA256 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CAMELLIA_256_CBC_SHA384 (secp256r1) - A
+
+|       TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (secp256r1) - A
+
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CCM (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_CCM_8 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CCM (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_CCM_8 (rsa 2048) - A
+
+|       TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A
+
+|       TLS_RSA_WITH_ARIA_128_GCM_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_ARIA_256_GCM_SHA384 (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_128_CBC_SHA256 (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (rsa 2048) - A
+
+|       TLS_RSA_WITH_CAMELLIA_256_CBC_SHA256 (rsa 2048) - A
+
+|     compressors: 
+
+|       NULL
+
+|     cipher preference: client
+
+|     warnings: 
+
+|       Weak certificate signature: SHA1
+
+|_  least strength: A
+
+31960/tcp open  unknown
+
+Deci,portul 31790 este pentru ssl.
+echo "JQttfApK4SeyHwDlI9SXGR50qclOAil1" | openssl s_client -connect localhost:31790 -ign_eof(obtinere cheie)
+cd /tmp
+mkdir alexandru
+cd alexandru
+touch file
+chmod 400 file ( altfel eroare la autentificare pentru ca nu este sigur)
+ssh -i file  bandit17@bandit.labs.overthewire.org -p 2220
+
+R:
+18. diff passwords.new passwords.old
+
+Output:
+42c42
+< glZreTEH1V3cGKL6g4conYqZqaEj0mte
+
+---
+> hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+R:  hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+
+19. ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat ~/readme"
+
+R:awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+
+20. ./bandit20-do cat /etc/bandit_pass/bandit20
+R:VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+
+21. echo "VxCazJaVykI6W36BkBU0mJTCM8rR95XT" | nc -l localhost 45535&
+    ./suconnect 45535
+R:NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
+22.cd /etc/cron.d
+   ls
+   cat cronjob_bandit22
+   Output:
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+   cat /usr/bin/cronjob_bandit22.sh
+    chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+--
+	cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+	cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+
+R:WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+
+23.     cd /etc/cron.d
+	ls
+	cat cronjob_bandit23
+	cat /usr/bin/cronjob_bandit23.sh
+OUTPUT:
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+--
+Concluzia este ca se copiaza in /tmp/$mytarget parola
+	echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+OUTPUT comanda anterioara:8169b67bd894ddbb4412f91573b38db3
+	cat /tmp/8169b67bd894ddbb4412f91573b38db3
+
+R:QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+
+24. cd /tmp/rand
+    ./script.sh
+    cat password
+R:VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+
+25.	cd /tmp/rand
+	touch bruteforce(fisier pentru a afisa parola + numarbruteforce)
+--creez un script de generare( am creat 2 separat,unul pana la 5000 si unul de la 5000 la 9999 pentru a scuti timp)
+#!/bin/bash
+parola=VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+for i in {5000..9999}
+do
+	echo "$parola $i" >>bruteforce
+done
+--- acesta este scriptul care rulat
+#!/bin/bash
+while read line
+do
+nc localhost 30002
+echo $line
+done < bruteforce
+--scriptul principal in urma caruia se obtine parola
+Correct!
+The password of user bandit25 is p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+R:p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+
+26. cat /etc/passwd | egrep "^bandit26"
+    Shellul este /usr/bin/showtext
+    cat /usr/bin/showtext
+#!/bin/sh
+export TERM=linux
+more ~/text.txt
+exit 0
+Avem de a face cu more , iar shell ul nu este cel standard, deci la incercarea de rulare prin intermediul cheii private
+ssh -i bandit_privkey bandit26@localhost -p 2220 se va face apel la functia more care este dependenta de dimensiunea actuala a terminalului.
+Astfel in cazul in care un text este foarte mic este posibil sa nu se intample nimic la rularea more, asa cum se intampla si in acest caz
+prin rularea cu more a fisierului text.txt. Astfel aducem la un nivel foarte mic dimensiunea terminalului pentru a permite "castigarea timpului"
+In timpul rularii "more" apasam tasta v pentru a intra in editor iar la final, :e /etc/bandit_pass/bandit26 si parola apare pe prima linie a editorului.
+
+
+
+R:c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1
+
+27.
+Se procedeaza anterior doar ca incercam sa utilizam shellul pt bandit26
+Dupa ce apasam tasta "v" se introduc comenzile
+:set shell=/bin/bash
+ENTER
+:shell
+Se observa ca putem rula cu utilizatorul bandit26 acum.
+ls
+Exista un script ca in ctf urile anterioare numit bandit27-do care permite rularea unor comenzi sub "numele" de bandit27
+./bandit27-do cat /etc/bandit_pass/bandit27
+Obtinem parola pentru bandit27.
+
+
+R:YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
+
+28. Creem director in care sa apara repo-ul.
+cd /tmp
+mkdir directorGit
+git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+Apare repo in directorGit care este tot un director
+cd repo
+ls
+README
+cat README
+De aici se obtine parola
+
+R:AVanL161y9rsbcJIsFHuw35rjaOM19nR
+
+29. Creem director in care sa apara repo-ul.
+cd /tmp
+mkdir bandit29
+git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+Apare repo in bandit29.
+cd repo
+ls
+README.md
+cat README
+Outputul este unul cu parola cenzurata, deci avem nevoie sa gasim o alta versiune anterioara in care sa fie stocata parola.
+git log
+ommit 899ba88df296331cc01f30d022c006775d467f28 (HEAD -> master, origin/master, origin/HEAD)
+
+Author: Morla Porla <morla@overthewire.org>
+
+Date:   Sun Apr 23 18:04:39 2023 +0000
+
+
+
+    fix info leak
+
+
+
+commit abcff758fa6343a0d002a1c0add1ad8c71b88534
+
+Author: Morla Porla <morla@overthewire.org>
+
+Date:   Sun Apr 23 18:04:39 2023 +0000
+
+
+
+    add missing data
+
+
+
+commit c0a8c3cf093fba65f4ee0e1fe2a530b799508c78
+
+Author: Ben Dover <noone@overthewire.org>
+
+Date:   Sun Apr 23 18:04:39 2023 +0000
+
+git checkout abcff758fa6343a0d002a1c0add1ad8c71b88534
+cat README.md
+Acum parola apare asa cum trebuie
+
+R:tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
+
+30.cd /tmp/bandit30
+ls
+cd repo
+ls
+cat README.md
+git log
+Parola nu a fost setata in trunk, deci cautam in alte branch uri.
+git branch -a
+Cautam in toate branch-urile folosind:
+git checkout <nume_branch>
+git checkout dev
+cat README.md
+Aici se obtine parola
+
+R:xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
+
+31. Se executa comanda de mai devreme pentru bandit30.
+cat README.md
+Fisierul este gol.
+git log
+Nu exista modificari
+git tag
+Gasim tag-urile utilizatorilor(tagul se numeste "secret")
+git show secret
+R:OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+
+32. Aceeasi comanda de clonare.
+git tag
+commit 362bfd50c2007554b4aac93af07ebf964179a7b7 (HEAD -> master, origin/master, origin/HEAD)
+
+Author: Ben Dover <noone@overthewire.org>
+
+Date:   Sun Apr 23 18:04:43 2023 +0000
+
+
+
+    initial commit
+
+
+
+diff --git a/.gitignore b/.gitignore
+
+new file mode 100644
+
+index 0000000..2211df6
+
+--- /dev/null
+
++++ b/.gitignore
+
+@@ -0,0 +1 @@
+
++*.txt
+
+diff --git a/README.md b/README.md
+
+new file mode 100644
+
+index 0000000..0edecc0
+
+--- /dev/null
+
++++ b/README.md
+
+@@ -0,0 +1,7 @@
+
++This time your task is to push a file to the remote repository.
+
++
+
+Mesajul final este un hint.
+touch key.txt
+cat 'Can I come in?' > key.txt
+git add key.txt -f (deoarece primeam eroare daca nu era fortat)
+git commit "new commit"
+git log -verificam daca s-a facut commit cu succes
+git push - efectuam salvarea
+Introducem parola bandit31 si obtinem parola cautata
+
+R:rmCBvG56y58BXzv98yZGdO7ATVL5dW8y
+
+33. $0
+    cat /etc/user
+R:odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
