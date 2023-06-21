@@ -1,0 +1,38 @@
+NATAS:
+Level 0:
+
+Se afiseaza sursa paginii si se observa parola ca fiind trecuta sub forma de comentariu.
+R:g9D9cREhslqBKtcA2uocGHPfMZVzeFK6
+Level 1:
+
+F12
+Edit as html cand gasesc parola
+R:h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7
+Level 2:
+
+Am facut inspect pe codul paginii.
+In cadrul codului se alfa o portita files/pixel.png, singurul cod din body.
+Accesez prin URL files si acolo selectez users.txt
+Rezultat:
+# username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+De la campul natas3 extrag urmatoarea parola.
+R:G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+
+Level 3:
+Dupa o documentatie am aflat de existenta fisierului robots.txt care contine interfete web ce pot si nu pot fi accesate.
+http://natas3.natas.labs.overthewire.org/robots.txt
+Aflu de aici:
+User-agent: *
+Disallow: /s3cr3t/
+Deci, accesam http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
+De unde rezulta parola.
+R:tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
+
+Level 4:
+Se foloseste un tool pentru a schimba refer adress
