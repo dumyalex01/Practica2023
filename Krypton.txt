@@ -1,0 +1,200 @@
+Krypton
+Level 0:
+echo S1JZUFRPTklTR1JFQVQ | base64 -d
+R:KRYPTONISGREAT
+
+Level 1:
+cd /krypton
+cd krypton1
+cat krypton1 | tr "A-Z" "N-ZA-M"
+LEVEL TWO PASSWORD ROTTEN
+R:ROTTEN
+
+Level 2:
+cd /krypton
+cd krypton2
+Este preluat codul din README pentru creere si executat scriptul pentru /etc/dev, ceea ce inseamna ca Ubuntu devine prin
+criptare GNGZFGXFEZX
+De aici se deduce comanda:
+cat krypton3 | tr [m-za-lM-ZA-L] [a-zA-Z]
+
+R:CAESARISEASY
+
+Level 3:
+Se foloseste algoritmul criptografic de frecventa a literelor.
+Folosesc un script pentru a determina maparea din cipher in plain.
+mkdir /tmp/krypton3
+touch /tmp/krypton3/script
+chmod u+x /tmp/krypton3/script
+cd /tmp/krypton3/script
+./script
+#!/bin/bash
+cd
+cd /krypton/krypton3
+find=`cat found1 found2 found3`
+variabila="A"
+for i in {0..25}
+do
+        numarAparitii=`echo $find | egrep -o $variabila| wc -l`
+        echo $variabila $numarAparitii
+        variabila=`echo $variabila | tr "A-Z" "B-ZA"`
+done
+Dupa rulare:
+A 55
+
+B 246
+
+C 227
+
+D 210
+
+E 64
+
+F 28
+
+G 227
+
+H 4
+
+I 19
+
+J 301
+
+K 67
+
+L 60
+
+M 86
+
+N 240
+
+O 12
+
+P 2
+
+Q 340
+
+R 4
+
+S 456
+
+T 75
+
+U 257
+
+V 130
+
+W 129
+
+X 71
+
+Y 84
+
+Z 132
+
+Pentru usurinta pot fi afisate intr-un fisier si folosita functia sort pe campul 2 (nu am facut asta,le am luat manual).
+Am folosit o statistica de pe internet pentru a gasi frecventa literelor in engleza.
+Rezultatul este mai putin intuitiv, insa cu putina atentie ne dam seama ca parola este BRUTE
+                      
+
+R:WELLD ONETH ELEVE LFOUR PASSW ORDIS BRUTE //Parola este BRUTE
+
+LEVEL4:
+Pentru usurinta depistarii frecventei am folosit un program c++ cu un fisier in care introduc fisierele found1 si found2 concatenate
+In cod sterg spatiile pentru a fi mai usoara indexarea caracterelor
+#include <iostream>
+#include <fstream>
+using namespace std;
+void calculeaza_frecventa(char* buffer,int nr,int length)
+{
+	char caracter;
+	int fmax = 0;
+	cout << "Frecventa pentru sirul " << nr << endl;
+	for (int i = 'A'; i <= 'Z'; i++)
+	{
+		int frecventa = 0;
+		for (int j = 0; j < length; j++)
+			if (buffer[j] == i)
+				frecventa++;
+		if (frecventa > fmax)
+		{
+			    fmax = frecventa;
+				caracter = (char)i;
+		}
+
+	}
+	cout << caracter << " " << fmax << endl;
+}
+void main()
+{
+	
+	fstream f("file.txt");
+	char buffer[10000];
+	int n;
+	f.getline(buffer, 10000);
+	n = strlen(buffer);
+	for (int i = 0; i < n; i++)
+	{
+		if (buffer[i] == ' ')
+		{
+			for (int j = i; j < n; j++)
+			{
+				buffer[j] = buffer[j+1];
+				
+			}
+			n--;
+		}
+	}
+	for (int j = 0; j < 6; j++)
+	{
+		char bufferAux[10000];
+		int lungimeBuffer = 0;
+		for (int i = j; i < n; i = i + 6)
+			bufferAux[lungimeBuffer++] = buffer[i];
+		calculeaza_frecventa(bufferAux, j + 1, lungimeBuffer);
+	}
+	
+}
+OBTIN cheia FREKEY => cheia este FRE
+HCIKVRJOX - FREFREFRE ->CLEARTEXT
+R: CLEARTEXT
+
+LEVEL5:
+	cd /krypton/
+	ls
+krypton1  krypton2  krypton3  krypton4  krypton5  krypton6
+	cd krypton5
+	ls
+found1  found2  found3  krypton6  README
+	cat README 
+Frequency analysis can break a known key length as well.  Lets try one
+last polyalphabetic cipher, but this time the key length is unknown.
+Enjoy.
+	cat krypton6 
+BELOS Z
+-vom folosi pentru decriptare vigenere.php
+-introducem in ciphertext textul din fisierul found1
+-key length va fi 9 si obtinem cheia: xeylencth, care rearanjata ar putea fi keylength
+- o folosim pe cea din urma pentru decodificarea parolei si obtinem:
+R:RANDOM
+
+LEVEL 6:
+	cd /krypton/krypton6
+	ls
+encrypt6  HINT1  HINT2  keyfile.dat  krypton7  onetime  README
+	./encrypt6 
+usage: encrypt6 foo bar 
+Where: foo is the file containing the plaintext and bar is the destination ciphertext file.
+	mkdir /tmp/k6
+	cd /tmp/k6
+	ln -s /krypton/krypton6/keyfile.dat 
+	ls
+keyfile.dat
+	python -c "print 'A'*100" >f1
+	cat f1
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	/krypton/krypton6/encrypt6 f1 f2
+	cat f2
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRNEICTDGYIYZKTHNSIRFXYCPFUEOCKRNEICTDGYIYZKTHNSIRFXYCPFUEOCKRNEICTDGYIYZ-> key
+	cat /krypton/krypton6/krypton7 
+PNUKLYLWRQKGKBE-> ciphertext
