@@ -1,0 +1,112 @@
+1. Obedient Cat
+Se descarca flag-ul, se deschide cu notepad si se obtine:
+picoCTF{s4n1ty_v3r1f13d_2fd6ed29}
+
+2. Python Wrangling
+python ende.py -d flag.txt.en
+picoCTF{4p0110_1n_7h3_h0us3_ac9bd0ff}
+
+3. Mod 26
+echo "cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_hyLicInt}" | tr "A-Za-z" "N-ZA-Mn-za-m"
+picoCTF{next_time_I'll_try_2_rounds_of_rot13_ulYvpVag}
+
+4. Wave a flag
+chmod +x warm
+./warm -h
+picoCTF{b1scu1ts_4nd_gr4vy_f0668f62}
+
+5. Information
+exiftool cat.jpg
+Apare licenta spre deosebire de png
+Am incercat ROT,dar nu avea sens pentru ca nu aveam {} .
+BASE64? DAA!!
+echo "..." | base64 -d
+picoCTF{the_m3tadata_1s_modified}
+
+6. NiceNetcat
+        nc mercury.picoctf.net 21135
+	int vector[] = { 112,105,99,111,67,84,70,123,103,48,48,100,95,107,49,116,116,121,33,95,110,49,99,51,95,107,49,116,116,121,33,95,97,102,100,53,102,100,97,52,125,10 };
+	for (int i = 0; i < 42; i++)
+		cout << (char)vector[i];
+
+picoCTF{g00d_k1tty!_n1c3_k1tty!_afd5fda4}
+
+6.
+#!/bin/python3
+
+
+
+string="灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸彤㔲挶戹㍽"
+
+encript=""
+
+for i in range(0,len(string),2):
+
+	encript[i]=chr((ord(string[i])<<8)+ord(string[i+1]))
+
+print(encript)
+
+picoCTF{16_bits_inst34d_of_8_26684c20}
+
+7. get aHEAD
+Se schimba in BURP prima linie(sau a doua) pe care scrie POST . Se da forward, dupa care se iese din pagina. Atunci apare flag-ul:
+picoCTF{r3j3ct_th3_du4l1ty_8f878508}
+
+8. Static ain't always noise
+cd Downloads
+strings static
+Pe o linie este gasit flag-ul.
+
+picoCTF{d15a5m_t34s3r_6f8c8200}
+
+9.Dezarhivare... si rulare ultimul document care este script
+
+picoCTF{l3v3l_up!_t4k3_4_r35t!_2bcfb2ab}
+
+10. keygenme-py
+Pentru a afla partea ce trebuie sa inlocuiasca "xxxxxxxx" folosim scriptul:
+#!/bin/python3
+
+import base64
+import hashlib
+parte_noua=""
+indexes=[4,5,3,6,2,7,1,8]
+for i in indexes:
+	parte_noua += hashlib.sha256(b"FREEMAN").hexdigest()[i]
+print(parte_noua)
+
+Flagul este astfel picoCTF{1n_7h3_|<3y_of_0d208392}
+
+11. Magikarp Ground Mission
+Se executa instructiunile din linux si se obtine flagul
+picoCTF{xxsh_0ut_0f_\/\/4t3r_71be5264}
+
+12. Let's WarmUp
+0x70 in ascii este 'p'
+picoCTF{p}
+
+13. Warmed Up
+Se face calculul 0x3D este 61
+picoCTF{61}
+
+14. Wireshark do...
+Se deschide cu wireshark si se analizeaza stream5
+Se aplica rot13
+picoCTF{p33kab00_1_s33_u_deadbeef}
+
+15. Insp3ct0r
+/* Javascript sure is neat. Anyways part 3/3 of the flag: _lucky?2e7b23e3} */
+<!-- Html is neat. Anyways have 1/3 of the flag: picoCTF{tru3_d3 -->
+/* You need CSS to make pretty pages. Here's part 2/3 of the flag: t3ct1ve_0r_ju5t */
+Se acceseaza fiecare fisier header in parte
+picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?2e7b23e3}
+
+16. Scavanger hunt
+
+<!-- Here's the first part of the flag: picoCTF{t -->
+/* CSS makes the page look nice, and yes, it also has part of the flag. Here's part 2: h4ts_4_l0 */
+t_0f_pl4c
+Se acceseaza robots.txt pentru a treia parte
+Se acceseaza .htaccess pentru ultima parte
+3s_2_lO0k
+picoCTF{th4ts_4_l0t_0f_pl4c3s_2_lO0k_7a46d25d}
