@@ -35,4 +35,19 @@ De unde rezulta parola.
 R:tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
 
 Level 4:
-Se foloseste un tool pentru a schimba refer adress
+Se foloseste un tool pentru a schimba refer adress(BurpSuite).
+In proxy-ul burp folosim comanda Referer: http://natas5.natas.overthewire.org/
+Dupa refresh se obtine parola:
+Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
+
+Level 5:
+In burp, modificam cookie-ul din liniile de comanda proxy.
+Cookie: loggedin=1
+fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR
+
+Level 6:
+Se da inspect unde gasesc extensia paginii
+includes/secret.inc
+Accesam si obtinem secretul.
+Parola este obtinuta in urma type-ului secretului:
+jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr
