@@ -1,0 +1,44 @@
+1. JavaScript Obfuscation 3
+Se inspecteaza pagina.
+De pe sursa paginii obtinem un script in care se observa un sir de decodificat:\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x..
+Vom folosi pentru decodificare un tool online: https://www.unphp.net/decode/1212231b4a1e0d3834530f6e081cfeec/
+In urma folosirii tool-ului se obtine rezultatul:55,56,54,79,115,69,114,116,107,49,50
+Se foloseste ca hint evident in cod functia string.fromcharcode(55,56,54,79,115,69,114,116,107,49,50):
+Rezultatul obtinut in urma unui decriptor online este : 786OsErtk12 care verifica si este parola cautata
+
+2. Directory Traversal
+Se inspecteaza pagina.
+Intru pe fiecare categorie in parte(emotes,apps,devices,categories,actions)
+Observ in inspect ca url-ul devine http://challenge01.root-me.org/web-serveur/ch15/ch15.php?galerie=x , unde x face parte din
+lista (emotes,apps,devices,categories,actions) 
+
+--Important--
+
+Inlocuim x cu "/"
+
+In consecinta va fi afisat si alt(mesajul alternativ in cazul neafisarii unei poze la folosirea /)
+Cum a fost aleasa optiunea / => Pozele clar nu vor mai fi afisate deoarece  se renunta la sursa acestora (emotes,apps,etc...)
+La un refresh al paginii cu url-ul http://challenge01.root-me.org/web-serveur/ch15/ch15.php?galerie=/ se obtine alt pentru prima poza
+ca fiind 86hwnX2r(inspect)
+Se acceseaza url-ul http://challenge01.root-me.org/web-serveur/ch15/ch15.php?galerie=/86hwnX2r, unde apar 2 poze si o alta poza care
+nu poate fi afisata(este afisat alt-ul).
+Dupa inspect observam ca alt-ul este password.txt.
+http://challenge01.root-me.org/web-serveur/ch15/galerie/86hwnX2r/password.txt este accesat, de unde se obtine parola:
+kcb$!Bx@v4Gs9Ez 
+
+3.Command and Control 2
+Se foloseste link-ul dat ca hint si se testeaza anumite comenzi
+sudo snap install volatility- framework open source pentru dump-are in fisiere binare
+--Most Important--
+volatility -f ch2.dmp --profile=Win7SP1x86_23418 hivelist
+Aceasta instructiune afiseaza zona de memorie in care se afla cheia pentru hostname ce trebuie folosita cu ajutorul printkey -o
+--
+
+volatility -f ch2.dmp --profile=Win7SP1x86_23418 printkey -o 0x8b21c008 -K 'ControlSet001\Control\ComputerName\ComputerName' -instructiunea finala de afisare
+-- Secventa dintre '' este preluata de pe internet.
+
+WIN-ETSA91RKCFP
+
+4.
+
+
