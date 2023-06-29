@@ -694,11 +694,8 @@ La final picoCTF
 Apoi end
 picoCTF{h3r0_t0_z3r0_4m1r1gh7_be33d1f6}
 
-74. Reverse
-Dam cat la fisierul ret
-Observam ca are in componenta un numar mare de caractere bin
-strings ret | grep "pico", de unde obtinem flag-ul
-picoCTF{3lf_r3v3r5ing_succe55ful_9ae85289}
+74. More SQLi
+picoCTF{G3tting_5QL_1nJ3c7I0N_l1k3_y0u_sh0ulD_3b0fca37}
 
 75. ASCII FTW
 Descarcam fisierul
@@ -1020,6 +1017,27 @@ sudo gem install zsteg
 zsteg pico.flag.png
 zsteg se foloseste pentru a afisa si detalii "ascunse" ale unei poze.
 picoCTF{7h3r3_15_n0_5p00n_a1062667}
+
+89. Reverse
+Dam cat la fisierul ret
+Observam ca are in componenta un numar mare de caractere bin
+strings ret | grep "pico", de unde obtinem flag-ul
+picoCTF{3lf_r3v3r5ing_succe55ful_9ae85289}
+
+90. vault-door 4
+Se transforma in ascii astfel:
+prima linie din decimal in ascii
+a doua din hexa in ascii
+a treia din octal in ascii
+a patra este ascii
+picoCTF{jU5t_4_bUnCh_0f_bYt3s_f4a8cd8f7e} 
+
+91. who is it
+dam cat pe fisierul cu email-uri
+cat <...> | egrep "[0-9]{2,3}\.[0-9]{2,3}" pentru a gasi potentiale adrese ip
+whois <adresa ip gasita>
+picoCTF{WilhelmZwalina}
+
 
     
 
